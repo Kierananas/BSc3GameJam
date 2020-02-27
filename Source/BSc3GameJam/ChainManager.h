@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "PhysicsEngine/PhysicsConstraintComponent.h"
 #include "ChainManager.generated.h"
 
 UCLASS()
@@ -27,8 +28,8 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Mesh")
 		TArray<UStaticMeshComponent*> RopeArray;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Mesh")
-		bool SimulatePhysics;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Mesh")
+		TArray<UPhysicsConstraintComponent*> ConstraintArray;
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
